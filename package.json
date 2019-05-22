@@ -1,6 +1,6 @@
 {
   "name": "bigchaindb-driver",
-  "version": "4.1.1",
+  "version": "4.2.0",
   "description": "Node.js driver for BigchainDB",
   "homepage": "https://www.bigchaindb.com/",
   "bugs": "https://github.com/bigchaindb/js-bigchaindb-driver/issues",
@@ -23,7 +23,7 @@
     "clean": "rimraf dist/bundle dist/node",
     "test": "npm run lint && nyc ava test/ && npm run thanks && npm run report-coverage",
     "thanks": "cowsay Hi, thanks for your interest in BigchainDB. We appreciate your contribution!",
-    "release": "./node_modules/release-it/bin/release-it.js --src.tagName='v%s' --github.release --npm.publish --non-interactive --no-git.requireCleanWorkingDir",
+    "release": "./node_modules/release-it/bin/release-it.js minor --src.tagName='v%s' --github.release --npm.publish --non-interactive --no-git.requireCleanWorkingDir",
     "release-minor": "./node_modules/release-it/bin/release-it.js minor --src.tagName='v%s' --github.release --npm.publish --non-interactive",
     "release-major": "./node_modules/release-it/bin/release-it.js major --src.tagName='v%s' --github.release --npm.publish --non-interactive",
     "prepublishOnly": "npm run build",
