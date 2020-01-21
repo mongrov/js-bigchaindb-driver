@@ -1,32 +1,21 @@
 {
   "name": "bigchaindb-driver",
   "version": "4.1.1",
-  "description": "Node.js driver for BigchainDB",
+  "description": "React-native driver for BigchainDB",
   "homepage": "https://www.bigchaindb.com/",
-  "bugs": "https://github.com/bigchaindb/js-bigchaindb-driver/issues",
+  "bugs": "https://github.com/mongrov/js-bigchaindb-driver/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bigchaindb/js-bigchaindb-driver.git"
+    "url": "git+https://github.com/mongrov/js-bigchaindb-driver.git"
   },
   "license": "Apache-2.0",
   "author": "BigchainDB",
-  "main": "./dist/node/index.js",
-  "browser": "./dist/browser/bigchaindb-driver.cjs2.min.js",
-  "sideEffects": false,
+  "main": "./src/index.js",
   "scripts": {
     "lint": "eslint ./{src,test,examples}/**/*.js",
-    "build": "npm run clean && npm run build:cjs && npm run build:dist",
-    "build:bundle": "webpack",
-    "build:cjs": "cross-env BABEL_ENV=cjs babel ./src -d dist/node",
-    "build:dist": "cross-env NODE_ENV=production webpack",
-    "dev": "webpack -w",
     "clean": "rimraf dist/bundle dist/node",
     "test": "npm run lint && nyc ava test/ && npm run thanks && npm run report-coverage",
     "thanks": "cowsay Hi, thanks for your interest in BigchainDB. We appreciate your contribution!",
-    "release": "./node_modules/release-it/bin/release-it.js --git.tagName='v${version}' --github.release --npm.publish --non-interactive",
-    "release-minor": "./node_modules/release-it/bin/release-it.js minor --git.tagName='v${version}' --github.release --npm.publish --non-interactive",
-    "release-major": "./node_modules/release-it/bin/release-it.js major --git.tagName='v${version}' --github.release --npm.publish --non-interactive",
-    "prepublishOnly": "npm run build",
     "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",
     "doc": "node ./node_modules/documentation/bin/documentation.js build src/index.js -f md -o API.md -g --markdown-toc"
   },
@@ -92,7 +81,8 @@
     "driver",
     "blockchain",
     "decentralized",
-    "dapp"
+    "dapp",
+    "react-native"
   ],
   "ava": {
     "files": [
