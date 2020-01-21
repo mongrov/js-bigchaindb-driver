@@ -29,6 +29,7 @@ Code is Apache-2.0 and docs are CC-BY-4.0
 
 ## Breaking changes
 
+- **Version 4.1.1** (`#react-native` branch) serves the driver ready to use in react-native project.
 - **Version 4.0** of BigchainDB JavaScript Driver makes the driver compatible with BigchainDB 2.0. There are new functions for sending off transactions along with other changes. Check [older versions](https://docs.bigchaindb.com/projects/js-driver/en/latest/readme.html#features)
 - **Version 3.2** of BigchainDB JavaScript Driver introduces a new way of creating transfer transactions. Check [older versions](https://docs.bigchaindb.com/projects/js-driver/en/latest/readme.html#features)
 
