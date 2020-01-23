@@ -64,6 +64,7 @@ export default class Connection {
             'transactionsAsync': 'transactions?mode=async',
             'transactionsCommit': 'transactions?mode=commit',
             'transactionsDetail': 'transactions/%(transactionId)s',
+            'transactionsDetailWithoutId': '',
             'assets': 'assets',
             'metadata': 'metadata'
         }[endpoint]
@@ -88,11 +89,14 @@ export default class Connection {
      * @param transactionId
      */
     getTransaction(transactionId) {
-        return this._req(Connection.getApiUrls('transactionsDetail'), {
-            urlTemplateSpec: {
-                transactionId
-            }
-        })
+        if (transactionId) {
+            return this._req(Connection.getApiUrls('transactionsDetail'), {
+                urlTemplateSpec: {
+                    transactionId
+                }
+            })
+        }
+        return this._req(Connection.getApiUrls('transactionsDetailWithoutId'), {})
     }
 
     /**
